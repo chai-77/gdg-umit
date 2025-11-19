@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Iceland&family=Jura:wght@300..700&family=Londrina+Shadow&display=swap');
+@import "tailwindcss";
+
+/* Font 1 — Anta */
+.font1 {
+      font-family: 'Jura', sans-serif;
+        font-weight: 400; 
+
+}
+
+/* Font 2 — Iceland */
+.font2 {
+  font-family: 'Iceland', sans-serif;
+}
+
+/* Font 3 — Jura */
+.font3 {
+  font-family: 'Anta', sans-serif;
+
+}
+
+/* Font 4 — Londrina Shadow */
+.font4 {
+  font-family: 'Londrina Shadow', cursive;
+}
+
+html, body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #121212;
+    color: white;
+    font-family: 'Jura', sans-serif;
+    height: 100vh;
+   width: 100%; 
+}
+
+.team-text {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.row:hover {
+    align-items:baseline;
+}
