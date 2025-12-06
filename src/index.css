@@ -33,7 +33,7 @@ html, body{
 
 body {
     box-sizing: border-box;
-    /* background-color: #121212; */
+    background-color: #121212;
     color: white;
     font-family: 'Jura', sans-serif;
     height: 100vh;

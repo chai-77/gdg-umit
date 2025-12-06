@@ -1,12 +1,12 @@
 import React from 'react'
 import MemberCard from './MemberCard'
 
-const MemberDiv = () => {
+const MemberDiv = ({ members }) => {
   return (
-    <div className="flex justify-center w-full h-full gap-2">
-      <MemberCard />
-      <MemberCard />
-      <MemberCard />
+    <div className="flex flex-wrap justify-center w-full gap-4">
+      {members.map((member, i) => (
+        <MemberCard key={i} {...member} />
+      ))}
     </div>
   );
 };
