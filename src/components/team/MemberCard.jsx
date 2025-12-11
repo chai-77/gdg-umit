@@ -3,7 +3,7 @@ import { FaLinkedin } from 'react-icons/fa';
 
 const MemberCard = ({ name, position, linkedin, photo }) => {
   return (
-    <div className='w-[250px] md:w-[200px] lg:w-[220px] border-2 cursor-pointer border-white rounded-[5px] mx-2 text-center flex flex-col justify-center items-center'>
+    <div className='w-[250px] md:w-[200px] lg:w-[220px] border-2 cursor-pointer bg-black/20 border-white rounded-[5px] mx-2 text-center flex flex-col justify-center items-center'>
       <div className="circle w-[10em] h-[10em] rounded-full bg-white mt-1 overflow-hidden">
         {photo ? (
           <img src={photo} alt={name} className="w-full h-full object-cover" />

@@ -1,72 +1,11 @@
-import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import gsap from 'gsap'
+import React from "react";
+import { Link } from "react-router-dom";
+import GDGLogo from "./GDGLogo"; 
 
 const NavBar = () => {
-  const logoRef = useRef(null)
-  const innerBracketsRef = useRef(null)
-
-  const handleLogoHover = () => {
-    // Create a timeline for the animation
-    const tl = gsap.timeline()
-
-    // Rotate and scale the outer brackets
-    tl.to(logoRef.current, {
-      rotation: 360,
-      scale: 1.2,
-      duration: 0.6,
-      ease: 'back.out'
-    }, 0)
-
-    // Rotate inner brackets in opposite direction
-    tl.to(innerBracketsRef.current, {
-      rotation: -360,
-      duration: 0.6,
-      ease: 'back.out'
-    }, 0)
-
-    // Fade in the college name
-    tl.to(
-      logoRef.current.querySelector('.college-name'),
-      {
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power2.out'
-      },
-      0.3
-    )
-  }
-
-  const handleLogoHoverOut = () => {
-    const tl = gsap.timeline()
-
-    tl.to(logoRef.current, {
-      rotation: 0,
-      scale: 1,
-      duration: 0.6,
-      ease: 'back.out'
-    }, 0)
-
-    tl.to(innerBracketsRef.current, {
-      rotation: 0,
-      duration: 0.6,
-      ease: 'back.out'
-    }, 0)
-
-    tl.to(
-      logoRef.current.querySelector('.college-name'),
-      {
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.out'
-      },
-      0
-    )
-  }
-
   return (
     <>
-      {/* Rainbow Google Colors Top Bar */}
+      {/* Rainbow bar */}
       <div className="flex h-1">
         <div className="flex-1 bg-blue-500"></div>
         <div className="flex-1 bg-red-500"></div>
@@ -78,51 +17,9 @@ const NavBar = () => {
       <nav className="bg-[#121212] shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* GDG Logo */}
-            <div
-              ref={logoRef}
-              onMouseEnter={handleLogoHover}
-              onMouseLeave={handleLogoHoverOut}
-              className="cursor-pointer relative"
-            >
-              <div className="flex items-center justify-center relative h-16 w-16">
-                {/* Outer Brackets */}
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-500 via-red-500 to-yellow-500">
-                  &lt;
-                </div>
 
-                {/* Inner Content */}
-                <div
-                  ref={innerBracketsRef}
-                  className="flex flex-col items-center justify-center mx-1"
-                >
-                  {/* GDG Letters */}
-                  <div className="flex text-xs font-bold tracking-widest">
-                    <span className="text-blue-500">G</span>
-                    <span className="text-red-500">D</span>
-                    <span className="text-yellow-500">G</span>
-                  </div>
-
-                  {/* Decorative Dots */}
-                  <div className="flex gap-0.5 mt-0.5">
-                    <div className="w-1 h-1 rounded-full bg-blue-500"></div>
-                    <div className="w-1 h-1 rounded-full bg-red-500"></div>
-                    <div className="w-1 h-1 rounded-full bg-yellow-500"></div>
-                    <div className="w-1 h-1 rounded-full bg-green-500"></div>
-                  </div>
-                </div>
-
-                {/* Right Bracket */}
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-yellow-500 to-green-500">
-                  &gt;
-                </div>
-
-                {/* College Name - Hidden by default */}
-                <div className="college-name absolute top-full mt-2 whitespace-nowrap text-white text-xs font-semibold opacity-0 bg-black/50 px-3 py-1 rounded-lg backdrop-blur">
-                  UMIT College
-                </div>
-              </div>
-            </div>
+            {/* GDG LOGO */}
+            <GDGLogo />
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
@@ -159,7 +56,7 @@ const NavBar = () => {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu */}
             <div className="md:hidden">
               <button className="text-white hover:text-blue-400 transition-colors">
                 <svg
@@ -177,11 +74,12 @@ const NavBar = () => {
                 </svg>
               </button>
             </div>
+
           </div>
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

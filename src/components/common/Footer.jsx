@@ -94,7 +94,15 @@ const Footer = () => {
               <li className="text-gray-400">
                 <span className="font-medium text-white">Location:</span>
                 <br />
-                UMIT College
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=3RPJ+H5Q,+Juhu-Tara+Road,+Sir+Vitthaldas+Vidyavihar,+Santacruz(W),+Mumbai,+Maharashtra+400049"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  3RPJ+H5Q, Juhu-Tara Road, Sir Vitthaldas Vidyavihar, Santacruz(W), Mumbai, Maharashtra 400049
+                </a>
+
               </li>
             </ul>
           </div>

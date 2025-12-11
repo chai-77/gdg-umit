@@ -4,7 +4,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import MemberCard from '../components/team/MemberCard';
 import MemberDiv from '../components/team/MemberDiv';
 import TeamDeco from '../components/team/TeamDeco';
-import data from '../assets/team/data';
+import data from '../../public/team/data';
 
 const Team = () => {
     gsap.registerPlugin(ScrollToPlugin);
