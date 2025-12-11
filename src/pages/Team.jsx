@@ -14,7 +14,7 @@ const Team = () => {
     const getButtonClasses = (name, selected) => {
         const baseClasses = 'px-8 py-2 rounded-xl font-black transition-all duration-300 ease-in-out border-4';
         const selectedClasses = 'bg-black text-[#0F71F2] border-[#0F71F2] shadow-[5px_5px_0_0_#0F71F2]';
-        const unselectedClasses = 'bg-black text-white border-white shadow-[5px_5px_0_0_white] hover:shadow-[7px_7px_0_0_white]';
+        const unselectedClasses = 'bg-black text-white border-black  hover:shadow-[7px_7px_0_0_black]';
 
         return name === selected
             ? `${baseClasses} ${selectedClasses}`
@@ -98,7 +98,7 @@ const Team = () => {
                         </div>
 
                         {/* MEMBER CONTENT */}
-                        <div className="member-div w-full h-full hidden group-hover:flex justify-center items-center">
+                        <div className="member-div  w-full h-full hidden group-hover:flex justify-center items-center">
 
                             {/* Row 0 → Leads / Workforce switching */}
                             {index === 0 && <MemberDiv members={getMembersForRow0()} />}

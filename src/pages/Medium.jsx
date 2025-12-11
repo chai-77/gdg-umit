@@ -1,11 +1,84 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
 const Medium = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [articles, setArticles] = useState([]);
 
-export default Medium
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const url = `https://api.allorigins.win/get?url=${encodeURIComponent(
+          "https://medium.com/feed/dsc-umit"
+        )}`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data.contents, "text/xml");
+        const items = xml.querySelectorAll("item");
+
+        const posts = Array.from(items).map((item) => {
+          const title = item.querySelector("title")?.textContent;
+          const link = item.querySelector("link")?.textContent;
+          const author = item.querySelector("dc\\:creator")?.textContent;
+          const pubDate = new Date(
+            item.querySelector("pubDate")?.textContent
+          ).toDateString();
+
+          const imgMatch = item.innerHTML.match(/<img[^>]+src="([^">]+)"/);
+          const image = imgMatch ? imgMatch[1] : "/default.jpg";
+
+          return { title, link, author, pubDate, image };
+        });
+
+        setArticles(posts);
+      } catch (err) {
+        console.error("Error fetching feed:", err);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-16 text-white">
+      <h2 className="text-3xl font-bold text-center mb-10">
+        GDG UMIT Medium Articles
+      </h2>
+
+      {articles.length === 0 ? (
+        <p className="text-gray-400 text-center">Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {articles.map((a, i) => (
+            <a
+              key={i}
+              href={a.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-slate-700 hover:border-green-400 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="h-48 w-full overflow-hidden">
+                <img
+                  src={a.image}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="p-4">
+                <h3 className="text-lg font-semibold group-hover:text-green-400 transition">
+                  {a.title}
+                </h3>
+                <p className="text-gray-400 text-sm mt-2">
+                  {a.author} • {a.pubDate}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Medium;
