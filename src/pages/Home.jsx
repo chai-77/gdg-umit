@@ -7,7 +7,7 @@ const Home = () => {
 
       {/* ===== HERO ===== */}
       <section className="pt-28 pb-20 px-6 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold font1 leading-tight">
+        <h1 className="text-5xl md:text-6xl font-extrabold font1 leading-tight text-white">
           GDG UMIT
         </h1>
 
@@ -35,7 +35,7 @@ const Home = () => {
 
       {/* ===== RECENT EVENTS ===== */}
       <section className="py-16 px-6">
-        <h2 className="text-3xl font-bold font1 text-center mb-12">
+        <h2 className="text-3xl font-extrabold font1 text-center mb-12 text-white">
           Recent Highlights
         </h2>
 
@@ -50,7 +50,7 @@ const Home = () => {
               A 24-hour hackathon in collaboration with NMIMS, bringing developers together to build real-world solutions.
             </p>
             <Link to="/events" className="text-blue-400 hover:underline text-sm">
-              View Event →
+              View Event → 
             </Link>
           </div>
 
@@ -63,7 +63,7 @@ const Home = () => {
               A hands-on learning series exploring Google's Gen AI tools and Gemini API.
             </p>
             <Link to="/events" className="text-red-400 hover:underline text-sm">
-              View Event →
+              View Event → 
             </Link>
           </div>
 
@@ -76,7 +76,7 @@ const Home = () => {
               A competitive coding sprint designed to sharpen problem-solving and algorithmic thinking.
             </p>
             <Link to="/events" className="text-green-400 hover:underline text-sm">
-              View Event →
+              View Event → 
             </Link>
           </div>
 
@@ -94,7 +94,7 @@ const Home = () => {
           />
 
           <div>
-            <h2 className="text-3xl font-bold font1 mb-3">Our Community</h2>
+            <h2 className="text-3xl font-extrabold font1 mb-3 text-white">Our Community</h2>
             <p className="text-gray-300 leading-relaxed">
               GDG UMIT is a vibrant community of students passionate about learning, 
               building, and sharing ideas. We aim to uplift fellow developers through
@@ -105,7 +105,7 @@ const Home = () => {
               to="/medium"
               className="inline-block mt-6 px-6 py-3 text-sm rounded-lg bg-white/10 border border-gray-600 hover:bg-white/20 transition"
             >
-              Read Our Stories →
+              Read Our Stories → 
             </Link>
           </div>
 

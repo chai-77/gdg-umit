@@ -11,15 +11,15 @@ const Team = () => {
 
     const [selected, setSelected] = useState('Leads');
 
-    const getButtonClasses = (name, selected) => {
-        const baseClasses = 'px-8 py-2 rounded-xl font-black transition-all duration-300 ease-in-out border-4';
-        const selectedClasses = 'bg-black text-[#0F71F2] border-[#0F71F2] shadow-[5px_5px_0_0_#0F71F2]';
-        const unselectedClasses = 'bg-black text-white border-black  hover:shadow-[7px_7px_0_0_black]';
+    // const getButtonClasses = (name, selected) => {
+    //     const baseClasses = 'px-8 py-2  font-black transition-all duration-300 ease-in-out border-4';
+    //     const selectedClasses = 'bg-black text-[#0F71F2] border-[#0F71F2] shadow-[5px_5px_0_0_#0F71F2]';
+    //     const unselectedClasses = 'bg-[#121212] text-white border-[#121212] hover:shadow-[7px_7px_0_0_black]';
 
-        return name === selected
-            ? `${baseClasses} ${selectedClasses}`
-            : `${baseClasses} ${unselectedClasses}`;
-    };
+    //     return name === selected
+    //         ? `${baseClasses} ${selectedClasses}`
+    //         : `${baseClasses} ${unselectedClasses}`;
+    // };
 
     const rowRefs = Array.from({ length: 7 }, () => useRef(null));
 
@@ -36,13 +36,13 @@ const Team = () => {
     const handleMouseEnter = (rowRef) => {
         gsap.to(rowRef.current, {
             height: "25vw",
-            duration: 0.3,
+            duration: 0.4,
             ease: "power2.out",
             onComplete: () => {
                 gsap.to(window, {
                     duration: 0.5,
-                    scrollTo: { y: rowRef.current, offsetY: 20 },
-                    ease: "power2.out"
+                    // scrollTo: { y: rowRef.current, offsetY: 5 },
+                    ease: "expo.out" 
                 });
             }
         });
@@ -51,8 +51,8 @@ const Team = () => {
     const handleMouseLeave = (rowRef) => {
         gsap.to(rowRef.current, {
             height: "5.5vw",
-            duration: 0.3,
-            ease: "power2.out"
+            duration: 0.4,
+            ease: "expo.out" 
         });
     };
 
@@ -68,7 +68,7 @@ const Team = () => {
             <div className="all-rows w-[65vw] px-30 pt-5 h-full flex flex-col gap-2">
 
                 {/* Buttons Row */}
-                <div className="flex font2 text-3xl pb-5 gap-4 justify-center items-center mb-4">
+                {/* <div className="flex font2 text-3xl pb-5 gap-4 justify-center items-center mb-4">
                     <button
                         className={getButtonClasses('Leads', selected)}
                         onClick={() => setSelected('Leads')}>
@@ -79,7 +79,7 @@ const Team = () => {
                         onClick={() => setSelected('Workforce')}>
                         Workforce
                     </button>
-                </div>
+                </div> */}
 
                 {rows.map((row, index) => (
                     <div
@@ -118,7 +118,7 @@ const Team = () => {
             </div>
 
             <div className="team-deco sticky top-0 h-screen w-[25vw] flex items-center justify-center">
-                <TeamDeco />
+               <TeamDeco selected={selected} setSelected={setSelected} />
             </div>
         </div>
     );
