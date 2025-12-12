@@ -1,6 +1,13 @@
 import React from "react";
 
 const MediumCard = ({ title, author, date, link, image }) => {
+  // Format date: Dec 13, 2025
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+
   return (
     <a
       href={link}
@@ -28,7 +35,7 @@ const MediumCard = ({ title, author, date, link, image }) => {
             <span className="font-semibold text-green-400">Author:</span> {author}
           </p>
           <p className="text-gray-400 text-sm mt-1">
-            <span className="font-semibold text-green-400">Published:</span> {date}
+            <span className="font-semibold text-green-400">Published:</span> {formattedDate}
           </p>
         </div>
 
