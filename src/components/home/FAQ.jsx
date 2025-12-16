@@ -45,21 +45,21 @@ const FAQ = () => {
     };
     
     const faqData = [
+         {
+            question: "Who can join GDG UMIT?",
+            answer: "GDG UMIT is open to 2nd and 3rd year UMIT students who are interested in technology, regardless of branch. Whether you're curious about tech or already building projects, you're welcome here.",
+        },
         {
             question: "Do I need to be a coding expert to join?",
             answer: "Absolutely not! GDG UMIT welcomes everyone, from absolute beginners looking to start their tech journey to experienced developers seeking to contribute and mentor. We have content tailored for all skill levels.",
+        },  
+        {
+            question: "What kind of events do you organize?",
+            answer: "We organize learning-focused events like Gen AI Study Jams, coding practice challenges, and hackathons. Our goal is to create more hands-on and collaborative tech events as the chapter grows.",
         },
         {
-            question: "What kind of events does GDG UMIT organize?",
-            answer: "We organize a variety of events including hands-on coding workshops, study jams, tech talks by industry professionals, hackathons, and our annual flagship conference, DevFest.",
-        },
-        {
-            question: "Is there a membership fee to join?",
-            answer: "No, membership and participation in most GDG UMIT events are completely free! We are a community-driven group supported by Google Developers.",
-        },
-        {
-            question: "What Google technologies do you focus on?",
-            answer: "Our events cover a wide range, including Flutter, Android development, Google Cloud Platform (GCP), AI/Machine Learning (Gemini, TensorFlow), and Web technologies (Angular, Firebase).",
+            question: "How can I stay updated about upcoming events?",
+            answer: "All updates and announcements are shared through our official social media channels and communication groups.",
         },
     ];
 

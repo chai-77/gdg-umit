@@ -43,10 +43,7 @@ const About = () => {
                             <span style={{ color: gdgColors.blue }}>G</span>
                             <span style={{ color: gdgColors.red }}>D</span>
                             <span style={{ color: gdgColors.yellow }}>G</span>{" "}
-                            <span style={{ color: gdgColors.green }}>U</span>
-                            <span style={{ color: gdgColors.blue }}>M</span>
-                            <span style={{ color: gdgColors.red }}>I</span>
-                            <span style={{ color: gdgColors.yellow }}>T</span>
+                         
                         </span>?
                     </h2>
                     <p className="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto">

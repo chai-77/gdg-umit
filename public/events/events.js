@@ -7,7 +7,7 @@ import studyjams0 from '../../src/assets/events/studyjams0.png';
 const eventsData = [
   {
     title: "5 Days of Code Challenge",
-    date: "Upcoming (Exact Date TBD)",
+    date: "Dec 26 – Dec 30, 2025",
     type: "upcoming",
     summary:
       "An engaging 5-day coding challenge by GDG-UMIT to help learners build foundational coding skills and tackle programming tasks in a collaborative environment. Participants will solve daily challenges, grow their coding confidence, and connect with peers and mentors throughout the week. This event is ideal for beginners and intermediate learners looking to sharpen their skills.",
@@ -15,8 +15,8 @@ const eventsData = [
     images: [byteblitz0], 
   },
   {
-    title: "Google Cloud Study Jams – Tier 1 Achievement",
-    date: "2025 (Program Dates TBD)",
+    title: "Gen AI Study Jams – Tier 1 Achievement",
+    date: "20 Oct - 19 Nov, 2025",
     type: "past",
     summary:
       "GDG-UMIT participated in the Google Cloud Study Jams program, guiding students through hands-on learning of Google Cloud technologies and labs, culminating in a Tier 1 achievement — a recognition of community engagement and learning impact. This event emphasized peer-to-peer learning, practical cloud skills, and collaborative discovery of cloud fundamentals. Participants earned badges and gained confidence in building real-world cloud solutions.",

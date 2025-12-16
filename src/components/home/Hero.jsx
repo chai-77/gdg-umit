@@ -11,7 +11,7 @@ const Hero = () => {
     };
 
     return (
-        <div className=" min-h-[90vh] mx-40 mt-20 flex items-center justify-center border border-white bg-[#121212] py-20 overflow-hidden">
+        <div className=" min-h-[90vh] mx-40 mt-20 flex items-center justify-center border border-[#121212] bg-[#121212] py-20 overflow-hidden">
             
             <div className="max-w-8xl w-full flex justify-between items-center px-4 sm:px-6 lg:px-8">
                 
@@ -33,8 +33,8 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <h2 className="text-4xl font-extrabold mb-6" style={{ color: gdgColors.green }}>
-                        Build the future.
+                    <h2 className="text-4xl font-extrabold mb-6" >
+                        Think. Build. Scale.
                     </h2>
 
                     <p className="text-xl text-gray-400 max-w-xl mb-10">

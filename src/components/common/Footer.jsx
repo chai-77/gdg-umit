@@ -23,7 +23,7 @@ const Footer = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 pb-20">
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 justify-items-center">
 
           {/* BRAND — with <GDG/> bracket style */}
           <div className="group">
@@ -39,37 +39,55 @@ const Footer = () => {
               A community that builds, learns, and innovates with Google technologies.
             </p>
           </div>
+{/* COMMUNITY */}
+<div>
+  <h3 className="text-white font-semibold mb-4 tracking-wide">Community</h3>
+  <ul className="space-y-3">
+    {[
+      {
+        name: "LinkedIn",
+        color: "#4285F4",
+        link: "https://www.linkedin.com/company/gdsc-umit/",
+      },
+      {
+        name: "Twitter",
+        color: "#EA4335",
+        link: "https://twitter.com/DscUmit",
+      },
+      {
+        name: "Instagram",
+        color: "#FBBC04",
+        link: "https://www.instagram.com/gdg_umit",
+      },
+      {
+        name: "Discord",
+        color: "#34A853",
+        link: "https://discord.gg/WxRDeAFxbu",
+      },
+    ].map((item, i) => (
+      <li key={i}>
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 group"
+        >
+          <span
+            className="w-2 h-2 rounded-full block transition-all group-hover:scale-125"
+            style={{ background: item.color }}
+          />
+          <span className="text-gray-400 group-hover:text-white transition-colors">
+            {item.name}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
 
-          {/* COMMUNITY */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 tracking-wide">Community</h3>
-            <ul className="space-y-3">
-              {[
-                { name: "LinkedIn", color: "#4285F4" },
-                { name: "Twitter", color: "#EA4335" },
-                { name: "Instagram", color: "#FBBC04" },
-                { name: "Discord", color: "#34A853" },
-              ].map((item, i) => (
-                <li key={i}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 group"
-                  >
-                    <span
-                      className="w-2 h-2 rounded-full block transition-all group-hover:scale-125"
-                      style={{ background: item.color }}
-                    ></span>
-                    <span className="text-gray-400 group-hover:text-white transition-all">
-                      {item.name}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* LOCATION */}
-          <div>
+          <div >
             <h3 className="text-white font-semibold mb-4 tracking-wide">Location</h3>
             <p className="text-gray-400 text-sm">
               Usha Mittal Institute of Technology  
@@ -86,21 +104,30 @@ const Footer = () => {
           </div>
 
           {/* CONTACT */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 tracking-wide">Contact</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <span className="text-gray-400">Email:</span>
-                <br />
-                <span className="text-white font-medium">gdg@umit.edu</span>
-              </li>
-              <li>
-                <span className="text-gray-400">Support:</span>
-                <br />
-                <span className="text-white font-medium">+91 99999 55555</span>
-              </li>
-            </ul>
-          </div>
+      <div>
+  <h3 className="text-white font-semibold mb-4 tracking-wide">Contact</h3>
+  <ul className="space-y-2 text-sm">
+    <li>
+      <span className="text-gray-400">Email:</span>
+      <br />
+      <span className="text-white font-medium">gdg@umit.edu</span>
+    </li>
+
+    <li>
+      <span className="text-gray-400">GDG On Campus:</span>
+      <br />
+      <a
+        href="https://gdg.community.dev/gdg-on-campus-usha-mittal-institute-of-technology-mumbai-india/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-blue-500 hover:underline transition-colors"
+      >
+        Official Community Page
+      </a>
+    </li>
+  </ul>
+</div>
+
 
         </div>
 
