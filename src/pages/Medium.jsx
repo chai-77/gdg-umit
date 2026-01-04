@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MediumCard from "../components/medium/MediumCard";
+import "../css/medium.css";
 
 const Medium = () => {
   const [articles, setArticles] = useState([]);
