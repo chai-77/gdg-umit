@@ -3,6 +3,22 @@
    ========================================================= */
 
 /* Card */
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-height: 500px; 
+  overflow: hidden;
+  position: relative;
+}
+
+/* Optional: make it fluid on smaller screens */
+@media (max-width: 1024px) {
+  .card-image {
+    max-height: unset; /* full aspect ratio on smaller screens */
+  }
+}
 .events-card {
   background: #1a1a1a;
   border: 1px solid #374151; /* slate-700 */
