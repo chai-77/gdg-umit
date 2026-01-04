@@ -1,0 +1,170 @@
+/* ==============================
+   MEDIUM PAGE - RESPONSIVE STYLES
+   ============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Container */
+.medium-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+}
+
+/* Title */
+.medium-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: white;
+}
+
+/* Grid */
+.medium-grid {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* =================================================
+   MEDIUM CARD (MATCH EVENTS CARD FEEL)
+   ================================================= */
+
+.medium-card {
+  background: #1a1a1a;
+  border: 1px solid #374151; /* slate-700 */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hover */
+.medium-card:hover {
+  border-color: #22c55e; /* green-500 */
+  transform: translateY(-0.25rem);
+}
+
+/* Image */
+.medium-card-image {
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.medium-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+/* Content */
+.medium-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.card-title {
+  color: white;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.medium-card:hover .card-title {
+  color: #22c55e;
+}
+
+/* Meta */
+.card-author,
+.card-date {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #22c55e;
+}
+
+/* Accent bar — IMPORTANT */
+.card-accent-bar {
+  height: 2px;
+  width: 100%;
+  background: #22c55e;
+  margin-top: 1.25rem;
+}
+
+/* =================================================
+   RESPONSIVE
+   ================================================= */
+
+/* Mobile */
+@media (max-width: 639px) {
+  .medium-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .medium-card-image {
+    height: 12rem;
+  }
+
+  .medium-card-content {
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .medium-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .medium-card-image {
+    height: 14rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .medium-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .medium-card-image {
+    height: 16rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}

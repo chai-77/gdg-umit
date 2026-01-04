@@ -57,8 +57,8 @@ const MediumPreview = () => {
   }, []);
 
   return (
-    <section className="bg-[#1a1a1a] py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <section className="medium-preview bg-[#1a1a1a] py-20 md:py-32">
+      <div className="medium-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <header className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">
             Latest Insights from <span style={{ color: gdgColors.green }}>Our Blog</span>

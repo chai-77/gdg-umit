@@ -32,11 +32,11 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="bg-[#1a1a1a] py-24 md:py-36">
-            <div className="max-w-8xl mx-auto px-8 sm:px-12 lg:px-16 text-center">
+        <section id="about" className="about-section bg-[#1a1a1a] py-24 md:py-36">
+            <div className="about-inner max-w-8xl mx-auto px-8 sm:px-12 lg:px-16 text-center">
 
                 {/* Header */}
-                <div className="mb-20">
+                <div className="about-header mb-20">
                     <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6">
                         What is{" "}
                         <span>
@@ -52,8 +52,8 @@ const About = () => {
                 </div>
 
                 {/* Main Content: center the group but keep cards left-aligned */}
-                <div className="flex justify-center">
-                    <div className="grid grid-cols-2 gap-8">
+                <div className="about-grid-wrapper flex justify-center">
+                    <div className="about-grid grid grid-cols-2 gap-8">
                         {pillars.map((pillar, index) => (
                             <div 
                                 key={index} 

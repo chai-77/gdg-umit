@@ -11,7 +11,7 @@ const CodeBlock = () => {
 
     return (
         // Container size remains medium: w-[500px] h-[280px]
-        <div className="w-[500px] h-[280px] bg-[#1a1a1a] rounded-md border border-gray-700 select-none shadow-lg overflow-hidden">
+        <div className="codeblock w-[500px] h-[280px] bg-[#1a1a1a] rounded-md border border-gray-700 select-none shadow-lg overflow-hidden">
             
             {/* Top Bar */}
             <div className="h-6 bg-[#2c2c2c] flex items-center px-3 gap-2">

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GDGLogo from "./GDGLogo";
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex items-center justify-center flex-col w-full">
 
@@ -15,29 +17,40 @@ const NavBar = () => {
       </div>
 
       {/* MAIN NAVBAR */}
-      <nav className="nav-bar w-2xl bg-[#202124] h-[5em] shadow-[0_5px_15px_rgba(0,0,0,0.3)] 
-                     rounded-b-xl px-6 flex items-center justify-between">
+      <nav className="nav-bar w-2xl bg-[#202124] h-[5em] shadow-[0_5px_15px_rgba(0,0,0,0.3)]
+                     rounded-b-xl px-6 flex items-center justify-between relative">
 
         {/* Logo */}
         <GDGLogo />
 
-        {/* Links */}
+        {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8 text-lg font-semibold">
-
           <NavItem to="/" text="Home" color="#4285F4" />
           <NavItem to="/events" text="Events" color="#EA4335" />
           <NavItem to="/team" text="Team" color="#FBBC04" />
           <NavItem to="/medium" text="Medium" color="#34A853" />
-
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden text-white">
+        {/* Hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white z-50"
+        >
           <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round"
               d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-        </div>
+        </button>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="absolute top-full left-0 w-full bg-[#202124] flex flex-col items-center py-6 space-y-6 md:hidden">
+            <NavItem to="/" text="Home" color="#4285F4" />
+            <NavItem to="/events" text="Events" color="#EA4335" />
+            <NavItem to="/team" text="Team" color="#FBBC04" />
+            <NavItem to="/medium" text="Medium" color="#34A853" />
+          </div>
+        )}
 
       </nav>
     </div>
@@ -48,11 +61,11 @@ const NavItem = ({ to, text, color }) => {
   return (
     <Link
       to={to}
-      className="relative text-white transition group"
+      className="relative text-white text-lg transition group"
     >
       {text}
       <span
-        className="absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full 
+        className="absolute left-0 -bottom-1 h-[3px] w-0 group-hover:w-full
                    transition-all duration-300"
         style={{ backgroundColor: color }}
       ></span>

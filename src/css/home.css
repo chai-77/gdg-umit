@@ -1,0 +1,242 @@
+/* =====================================================
+   GLOBAL MOBILE SAFETY
+   ===================================================== */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* =====================================================
+   HERO — MOBILE
+   ===================================================== */
+/* @media (max-width: 640px) {
+
+  .hero-section {
+    margin: 0;
+    margin-top: 4rem;
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-cta {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero-right {
+    display: none;
+  }
+} */
+
+/* ===== HERO SECTION ===== */
+
+.hero-section {
+  margin: 20px auto;
+  width: min(90%, 1280px);
+  padding: 4rem 1.25rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* inner container */
+.hero-inner {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;         /* stack on mobile */
+  gap: 3rem;
+}
+
+/* LEFT */
+.hero-left {
+  width: 100%;
+  text-align: left;
+}
+
+/* TITLE */
+.hero-title {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  line-height: 1.1;
+  white-space: nowrap;            /* keeps <GDGUMIT/> intact */
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+}
+
+/* DESCRIPTION */
+.hero-desc {
+  font-size: clamp(1rem, 3.8vw, 1.2rem);
+  max-width: 36rem;
+}
+
+/* CTA */
+.hero-cta {
+  max-width: 16rem;
+}
+
+/* RIGHT */
+.hero-right {
+  display: none;                  /* hide CodeBlock on mobile */
+}
+
+@media (min-width: 1280px) {
+
+  .hero-section {
+    min-height: 90vh;
+  }
+
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 1;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1280px) {
+  .hero-section {
+    min-height: 90vh;
+    padding: 5rem 3rem;
+  }
+
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-left {
+    flex: 1;
+  }
+
+  .hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ===== HERO — MEDIUM SCREENS ===== */
+@media (min-width: 640px) and (max-width: 1279px) {
+
+  .hero-inner {
+    flex-direction: column;      /* stack */
+    align-items: center;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-right {
+    display: flex;               /* SHOW code block */
+    justify-content: center;
+    margin-top: 3rem;
+    width: 100%;
+  }
+}
+
+
+
+
+/* =====================================================
+   ABOUT — MOBILE
+   ===================================================== */
+@media (max-width: 640px) {
+
+  .about-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-header p {
+    font-size: 1.1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   CODE BLOCK — MOBILE
+   ===================================================== */
+@media (max-width: 640px) {
+  .codeblock {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* =====================================================
+   FAQ — MOBILE
+   ===================================================== */
+@media (max-width: 640px) {
+
+  .faq-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .faq-section p {
+    font-size: 1rem;
+  }
+}
+
+/* =====================================================
+   MEDIUM PREVIEW — MOBILE
+   ===================================================== */
+@media (max-width: 640px) {
+
+  .medium-preview h2 {
+    font-size: 2.2rem;
+  }
+
+  .medium-preview p {
+    font-size: 1rem;
+  }
+}
+
+/* =====================================================
+   UPCOMING EVENTS — MOBILE
+   ===================================================== */
+@media (max-width: 640px) {
+
+  .upcoming-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .upcoming-section a {
+    width: 100%;
+    max-width: 260px;
+  }
+}

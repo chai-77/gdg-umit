@@ -6,6 +6,10 @@ import Home from './pages/Home.jsx'
 import Events from './pages/Events.jsx'
 import Medium from './pages/Medium.jsx'
 import Team from './pages/Team.jsx'
+import "./css/common.css";
+import "./css/home.css";
+import "./css/events.css";
+import "./css/team.css";
 
 const App = () => {
   return (

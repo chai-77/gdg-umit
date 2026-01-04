@@ -1,0 +1,173 @@
+/* =========================================================
+   EVENTS CARD
+   ========================================================= */
+
+/* Card */
+.events-card {
+  background: #1a1a1a;
+  border: 1px solid #374151; /* slate-700 */
+  overflow: hidden;
+  transition: all 0.3s;
+  max-width: 80%;
+  margin: 0 auto 2rem;
+}
+
+.events-card:hover {
+  border-color: #ef4444; /* red-500 */
+  transform: translateY(-0.25rem);
+}
+
+/* Image Section */
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.events-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Navigation arrows */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  z-index: 10;
+}
+
+.arrow-left {
+  left: 0.5rem;
+}
+
+.arrow-right {
+  right: 0.5rem;
+}
+
+/* Content Section */
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text */
+.card-title {
+  color: white;
+  font-weight: 800;
+  font-size: 1.875rem; /* 3xl */
+  margin-bottom: 0.5rem;
+}
+
+.card-info {
+  color: #9ca3af; /* gray-400 */
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-summary {
+  color: #d1d5db; /* gray-300 */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  transition: max-height 0.3s ease;
+}
+
+/* Truncated to 1 line (default for small/medium screens) */
+.truncated {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+}
+
+/* Learn More button */
+.learn-more {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Accent Bar */
+.card-accent {
+  height: 2px;
+  background: #ef4444;
+  margin-top: 1.5rem;
+}
+
+/* =========================================================
+   RESPONSIVE TRUNCATION
+   ========================================================= */
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .event-summary.truncated {
+    -webkit-line-clamp: 1; /* show 1 line, truncated */
+  }
+}
+
+/* Tablet / Medium screens (641px–1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .event-summary.truncated {
+    -webkit-line-clamp: 1; /* force 1 line truncation */
+  }
+}
+
+/* Desktop / Large screens (≥1024px) */
+@media (min-width: 1024px) {
+  .event-summary.truncated {
+    -webkit-line-clamp: unset; /* show full text */
+  }
+
+  .learn-more {
+    display: none; /* hide Learn More on desktop */
+  }
+}
+
+/* =========================================================
+   ADDITIONAL STYLING FOR RESPONSIVENESS
+   ========================================================= */
+
+.events-card {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .card-info {
+    font-size: 0.9rem;
+  }
+  .event-summary {
+    font-size: 0.875rem;
+  }
+}

@@ -98,8 +98,8 @@ const Upcoming = () => {
     };
 
     return (
-        <section className="bg-[#121212] py-20 mt-20">
-            <div className="max-w-5xl mx-auto px-6">
+        <section className="upcoming-section bg-[#121212] py-20 mt-20">
+            <div className="upcoming-inner max-w-5xl mx-auto px-6">
                 <header className="text-center mb-16">
                     <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">Upcoming Events</h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">

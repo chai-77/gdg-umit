@@ -1,0 +1,150 @@
+/* =========================================================
+   GLOBAL MOBILE SAFETY
+   ========================================================= */
+
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* =========================================================
+   NAVBAR — MOBILE ONLY
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .nav-bar {
+    width: 100%;
+    height: 4em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0;
+  }
+
+  /* Color bar width fix */
+  .flex.h-\[4px\].w-2xl {
+    width: 100%;
+  }
+
+  /* Reduce logo bracket size */
+  .nav-bar img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Logo text */
+  .nav-bar .text-2xl {
+    font-size: 1.1rem;
+  }
+
+  /* Tighten logo spacing */
+  .nav-bar .mx-2 {
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+  }
+}
+
+/* =========================================================
+   GDG LOGO — MOBILE ONLY
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .nav-bar .tracking-tight {
+    letter-spacing: 0.03em;
+  }
+
+}
+
+/* =========================================================
+   FOOTER — MOBILE ONLY
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  footer {
+    padding-top: 3rem;
+  }
+
+  /* Grid spacing */
+  footer .grid {
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  /* Brand heading */
+  footer h1 {
+    justify-content: center;
+    font-size: 1.6rem;
+  }
+
+  /* Footer text */
+  footer p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* Community links center */
+  footer ul {
+    align-items: center;
+  }
+
+  footer li a {
+    justify-content: center;
+  }
+
+  /* Bottom line spacing */
+  footer .border-t {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES (≤ 360px)
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .nav-bar {
+    height: 3.8em;
+  }
+
+  footer h1 {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* =========================================================
+   FOOTER — MEDIUM SCREENS (TABLETS / SMALL LAPTOPS)
+   ========================================================= */
+
+@media (min-width: 641px) and (max-width: 1023px) {
+
+  footer {
+    padding-top: 4rem;
+  }
+
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 3rem;
+    text-align: left;
+  }
+
+  /* Brand heading */
+  footer h1 {
+    font-size: 1.8rem;
+  }
+
+  footer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Center bottom copyright */
+  footer .border-t {
+    text-align: center;
+  }
+}

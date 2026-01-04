@@ -10,8 +10,7 @@ const TeamDeco = ({ selected, setSelected }) => {
   return (
     <div
       ref={ref}
-      className="select-none cursor-pointer flex flex-col justify-center
-                 items-start w-full h-full px-6"
+      className="team-deco"
       onMouseEnter={() => gsap.to(ref.current, { scale: 1.1, duration: 0.3 })}
       onMouseLeave={() => gsap.to(ref.current, { scale: 1, duration: 0.3 })}
     >
@@ -20,7 +19,7 @@ const TeamDeco = ({ selected, setSelected }) => {
       {["MEET", "THE", "TEAM"].map((word, i) => (
         <h1
           key={i}
-          className="font-black text-white tracking-tight leading-[0.85]"
+          className="team-deco-title"
           style={{
             fontSize: "6vw",
             borderLeft: `10px solid ${googleColors[i]}`

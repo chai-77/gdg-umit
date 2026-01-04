@@ -15,8 +15,8 @@ const Medium = () => {
         const data = await response.json();
 
 
-         console.log("Raw data from AllOrigins:", data); // <-- see the raw feed
-    console.log("Decoded feed:", data.contents); // <-- the XML contents
+    //      console.log("Raw data from AllOrigins:", data); // <-- see the raw feed
+    // console.log("Decoded feed:", data.contents); // <-- the XML contents
 
         const parser = new DOMParser();
         const xml = parser.parseFromString(data.contents, "text/xml");

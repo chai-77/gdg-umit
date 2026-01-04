@@ -3,7 +3,7 @@ import MemberCard from './MemberCard'
 
 const MemberDiv = ({ members }) => {
   return (
-    <div className="flex flex-wrap justify-center w-full gap-4">
+    <div className="members-container">
       {members.map((member, i) => (
         <MemberCard key={i} {...member} />
       ))}

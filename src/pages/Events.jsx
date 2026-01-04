@@ -8,7 +8,7 @@ const Events = () => {
       <h2 className="text-3xl font-bold text-center mb-10">
         GDG UMIT Events
       </h2>
-      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-10">
+      <div className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-10">
         {eventsData.map((event, idx) => (
           <EventsCard key={idx} {...event} />
         ))}
