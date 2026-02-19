@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dashboard | Team Manager</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent: #22c55e;
+            --error: #ef4444;
+        }
+
+        * { box-sizing: border-box; transition: all 0.2s ease; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        nav {
+            width: 350px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-right: 1px solid #334155;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1 { font-size: 1.25rem; color: var(--primary); margin-bottom: 20px; letter-spacing: -0.5px; }
+        h2 { font-size: 0.875rem; text-transform: uppercase; color: var(--text-dim); margin-top: 10px; }
+
+        /* Form Controls */
+        .section {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        input, select {
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        button:hover { background: var(--primary-hover); transform: translateY(-1px); }
+        button.secondary { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+        button.danger { background: #311c1c; color: var(--error); border: 1px solid var(--error); }
+        button.danger:hover { background: var(--error); color: white; }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            background: #334155;
+        }
+
+        pre {
+            background: #000;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1;
+            overflow: auto;
+            border: 1px solid #334155;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* File input hack */
+        .file-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>🚀 Team API Console</h1>
+
+    <div class="section">
+        <h2>Add Member</h2>
+        <form id="addForm">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <select name="level">
+                <option value="Leads">Leads</option>
+                <option value="Workforce">Workforce</option>
+            </select>
+            <input type="text" name="position" placeholder="Position (only leads or co-leads)" />
+            <input type="text" name="department" placeholder="Department" />
+            <input type="text" name="linkedin" placeholder="LinkedIn URL" />
+            <span class="file-label">Profile Image:</span>
+            <input type="file" name="image" accept="image/*" required />
+            <button type="submit">Create Member</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Fetch Data</h2>
+        <div style="display: flex; gap: 10px;">
+            <button class="secondary" onclick="fetchAPI('leads')">Leads</button>
+            <button class="secondary" onclick="fetchAPI('workforce')">Workforce</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Remove Member</h2>
+        <input type="text" id="deleteId" placeholder="Enter Member ID" />
+        <button class="danger" onclick="deleteMember()">Delete Permanently</button>
+    </div>
+</nav>
+
+<main>
+    <div class="response-header">
+        <h2 style="margin:0">Console Output</h2>
+        <div id="status" class="status-pill">Ready</div>
+    </div>
+    <pre id="output">// API responses will appear here...</pre>
+</main>
+
+<script>
+const BASE_URL = "http://localhost:3000";
+const output = document.getElementById("output");
+const statusPill = document.getElementById("status");
+
+function updateUI(data, status = "Success", isError = false) {
+    output.textContent = JSON.stringify(data, null, 2);
+    output.style.color = isError ? "#ef4444" : "#10b981";
+    statusPill.textContent = status;
+    statusPill.style.background = isError ? "#451a1a" : "#1e293b";
+}
+
+/* ADD TEAM MEMBER */
+document.getElementById("addForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusPill.textContent = "Sending...";
+    
+    const formData = new FormData(e.target);
+    try {
+        const res = await fetch(`${BASE_URL}/team/`, {
+            method: "POST",
+            body: formData
+        });
+        const data = await res.json();
+        updateUI(data, "Member Created");
+        e.target.reset();
+    } catch (err) {
+        updateUI({ error: err.message }, "Error", true);
+    }
+});
+
+/* REFACTORED FETCH */
+async function fetchAPI(endpoint) {
+    statusPill.textContent = "Fetching...";
+    try {
+        const res = await fetch(`${BASE_URL}/team/${endpoint}`);
+        const data = await res.json();
+        updateUI(data, `Fetched ${endpoint}`);
+    } catch (err) {
+        updateUI({ error: err.message }, "Error", true);
+    }
+}
+
+/* DELETE MEMBER */
+async function deleteMember() {
+    const id = document.getElementById("deleteId").value;
+    if (!id) return alert("ID is required");
+
+    statusPill.textContent = "Deleting...";
+    try {
+        const res = await fetch(`${BASE_URL}/team/${id}`, { method: "DELETE" });
+        const data = await res.json();
+        updateUI(data, "Deleted");
+        document.getElementById("deleteId").value = "";
+    } catch (err) {
+        updateUI({ error: err.message }, "Error", true);
+    }
+}
+</script>
+
+</body>
+</html>

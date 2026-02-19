@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.team-deco-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.all-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.all-rows-row {
+  color: white;
+  padding: 1.5rem 1rem;
+  min-height: 15vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.team-text {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.member-div {
+  width: 100%;
+}
+
+.member-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.member-card {
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  transition: transform 0.25s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+}
+
+.photo-img,
+.photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-name,
+.member-position {
+  text-align: center;
+  width: 100%;
+}
+
+.member-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  .team-container {
+    flex-direction: row;
+    padding: 2rem 5%;
+    align-items: flex-start;
+    gap: 6rem;
+  }
+
+  .team-deco-wrapper {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 4rem;
+  }
+
+  .all-rows {
+    flex: 1;
+    width: auto;
+    margin-left: 2rem;
+  }
+
+  .member-div {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease, opacity 0.3s ease;
+  }
+
+  .all-rows-row:hover .member-div {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .team-container {
+    gap: 8rem;
+  }
+
+  .member-card {
+    width: 240px;
+  }
+
+  .photo-img,
+  .photo-placeholder {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 600px) {
+  .member-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

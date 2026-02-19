@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gdg-blue: #4285F4;
+  --color-gdg-red: #EA4335;
+  --color-gdg-yellow: #FBBC04;
+  --color-gdg-green: #34A853;
+  --color-gdg-white: #FFFFFF;
+  
+  --color-gdg-grey-light: #E8EAED;
+  --color-gdg-grey: #9AA0A6;
+  --color-gdg-grey-dark: #5F6368;
+
+  --color-gdg-black-light: #2D2E31;
+  --color-gdg-black: #202124;
+  --color-gdg-black-dark: #171717;
+  --color-gdg-black-extra-dark:#000000;
+}
+
+.animate-slide-in {
+    animation: slideIn 1s cubic-bezier(0.33, 1, 0.46, 1) both;
+}
