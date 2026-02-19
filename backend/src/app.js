@@ -6,7 +6,9 @@ const multer = require('multer')
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://gdg-umit.vercel.app"
+}));
 app.use(express.json());
 
 const upload = multer({storage:multer.memoryStorage()});

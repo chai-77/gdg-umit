@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000"; 
+const API_BASE = import.meta.env.VITE_API_URL;
 
 export const fetchLeads = async () => {
   const res = await fetch(`${API_BASE}/team/leads`);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import MemberDiv from "../components/team/MemberDiv";
 import TeamDeco from "../components/team/TeamDeco";
-import { fetchLeads, fetchWorkforce } from "../../../backend/src/services/team.api";
+import { fetchLeads, fetchWorkforce } from "../services/team.api";
 
 import "../components/team/team.css";
 

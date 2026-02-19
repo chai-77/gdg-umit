@@ -1,9 +1,10 @@
-const app = require('./src/app')
-const connectDB = require('./src/db/db');
+const app = require("./app");
+const connectDB = require("./db/db");
 
+const PORT = process.env.PORT || 5000;
 
-connectDB(); // connect to MongoDb
-
-app.listen(3000, ()=>{
-    console.log("Server is running on port 3000");
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 });
